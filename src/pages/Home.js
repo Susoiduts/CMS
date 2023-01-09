@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from "../components/header"
-import Movie from "../components/movie"
+import Header from "../components/Header"
+import Movies from "../components/Movies"
 
 
 function home() {
@@ -8,7 +8,7 @@ function home() {
      
         <div className='container-app'>
         <Header /> 
-        <Movie/>
+        <Movies/>
         </div>
   )
 }
