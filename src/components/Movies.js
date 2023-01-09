@@ -24,7 +24,7 @@ function Movie() {
   return (
     <div className="container-movie">
       <div className="wrapper-movie">
-        
+        <Movie />
         <div className="card-movie">
           <div className="title-text">MoViE TITLE</div>
         </div>

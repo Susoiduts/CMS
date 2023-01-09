@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import Movies from "../components/Movies"
 
 
-function home() {
+function Home() {
     return (
      
         <div className='container-app'>
@@ -13,4 +13,4 @@ function home() {
   )
 }
 
-export default home
+export default Home

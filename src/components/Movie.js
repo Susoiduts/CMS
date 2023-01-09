@@ -1,6 +1,6 @@
 import React from "react";
 
-function movie() {
+function Movie() {
   return (
     <div className="card-movie">
       <div className="title-text">MoViE TITLE</div>
@@ -8,4 +8,4 @@ function movie() {
   );
 }
 
-export default movie;
+export default Movie;

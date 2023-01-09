@@ -1,9 +1,9 @@
 import React from 'react'
 
-function details() {
+function Details() {
   return (
     <div>details</div>
   )
 }
 
-export default details
+export default Details
