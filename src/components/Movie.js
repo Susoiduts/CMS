@@ -10,7 +10,7 @@ function Movie({movieData}) {
 
   const [imageUrl, setImageUrl] = useState();
   const title=movieData.fields.title
-  
+  const year=movieData.fields.year
 
   useEffect(() => {
 
@@ -25,6 +25,7 @@ function Movie({movieData}) {
     <div className="card-movie" style={{ backgroundImage: `url(${imageUrl})` }}>
       
       <div className="title-text">{title}</div>
+      
     </div>
   );
 }
