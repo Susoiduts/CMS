@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Movie from "./Movie";
 
-function Movie() {
+function Movies() {
   //fetch test
 
-  const [movies, setMovies] = useState([]);
+  const [moviesCont, setMoviesCont] = useState([]);
 
   const SPACE_ID = "62lmtlm7lbg7";
   const ACCESS_TOKEN = "QR3HFbCqEVnm8I_KfCCS26hgoKPvKUkO_zd2RJ3jG7Q";
@@ -14,50 +15,24 @@ function Movie() {
 
   useEffect(() => {
     axios.get(URI).then((response) => {
-      console.log(response.data);
-      let data = response.data.fields;
-
-      setMovies(data);
+      //saving array of movie information containinig objects
+      setMoviesCont(response.data.items);
     });
   }, []);
 
   return (
     <div className="container-movie">
       <div className="wrapper-movie">
-        <Movie />
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-        <div className="card-movie">
-          <div className="title-text">MoViE TITLE</div>
-        </div>
-      </div>
-
-      <div className="container-detail">
-        <div className="detail-header"></div>
+        {moviesCont ? (
+          moviesCont.map((movie, i) => {
+            return <Movie title={movie.fields.title} key={i} />;
+          })
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </div>
   );
 }
 
-export default Movie;
+export default Movies;
