@@ -20,13 +20,17 @@ function Movies() {
     });
   }, []);
 
+
+
+  
   return (
     <div className="container-movie">
       <div className="wrapper-movie">
         {moviesCont ? (
-          moviesCont.map((movie, i) => {
-            return <Movie title={movie.fields.title} key={i} />;
+          moviesCont.map((movieData, i) => {
+            return <Movie movieData={movieData} key={i}/>;
           })
+
         ) : (
           <p>Loading...</p>
         )}
