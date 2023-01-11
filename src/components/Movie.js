@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { Link } from 'react-router-dom';
+
 
 function Movie({movieData}) {
   const imageUrl = movieData.fields.pictures.fields.file.url;
-  const title=movieData.fields.title
+  const title=movieData.fields.title;
 
   return (
+    <Link to='/details' state={{ data: movieData }}>
     <div className="card-movie" style={{ backgroundImage: `url(${imageUrl})` }}>
       
       <div className="title-text">{title}</div>
       
     </div>
+    </Link>
   );
 }
 

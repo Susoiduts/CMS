@@ -1,8 +1,13 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
 
 function Details() {
+  const { state } = useLocation();
+  const { data } = state;
+  console.log(state)
+  console.log(data.fields.title)
   return (
-    <div>details</div>
+    <div>{data.fields.title}</div> 
   )
 }
 
