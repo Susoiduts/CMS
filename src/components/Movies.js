@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "contentful"
 import Movie from "./Movie";
-
+import Header from "./Header"
 
 function Movies() {
   const [moviesCont, setMoviesCont] = useState([]);
@@ -25,6 +25,7 @@ function Movies() {
   
   return (
     <div className="container-movie">
+      <Header></Header>
       <div className="wrapper-movie">
         {moviesCont ? (
           moviesCont.map((movieData, i) => {

@@ -3,13 +3,16 @@ import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Nav from "./components/Nav";
 
+
+
+
 function App() {
   return (
-    <div>
+    <div >
       <div className="App">
         <Router>
           <Nav />
-
+        
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/details" element={<Details />} />
