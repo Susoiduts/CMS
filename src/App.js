@@ -4,9 +4,13 @@ import { createClient } from "contentful";
 import Home from "./pages/LandingPage";
 import Details from "./pages/DetailPage";
 import Nav from "./components/Nav";
+import SearchBar from "./components/SearchBar";
+import ResultsPage from "./pages/ResultsPage";
 
 function App() {
   const [moviesCont, setMoviesCont] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  
   const client = createClient({
     space: "62lmtlm7lbg7",
     accessToken: "QR3HFbCqEVnm8I_KfCCS26hgoKPvKUkO_zd2RJ3jG7Q",
@@ -37,6 +41,8 @@ function App() {
               path="/details/:id"
               element={<Details moviesCont={moviesCont} />}
             />
+            <Route path="/searchbar" element={<SearchBar setSearchResults={setSearchResults}/>} />
+            <Route path="/results" element={<ResultsPage searchResults={searchResults}/>} />
           </Routes>
         </Router>
       </div>
