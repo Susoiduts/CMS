@@ -33,7 +33,7 @@ function App() {
     <div>
       <div className="App">
         <Router>
-          <Nav />
+          <Nav setSearchResults={setSearchResults} />
 
           <Routes>
             <Route path="/" element={<Home moviesCont={moviesCont} />} />
@@ -41,7 +41,7 @@ function App() {
               path="/details/:id"
               element={<Details moviesCont={moviesCont} />}
             />
-            <Route path="/searchbar" element={<SearchBar setSearchResults={setSearchResults}/>} />
+           
             <Route path="/results" element={<ResultsPage searchResults={searchResults}/>} />
           </Routes>
         </Router>
